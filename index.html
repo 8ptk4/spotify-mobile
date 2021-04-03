@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="material.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Pruttify Media Player</title>
+</head>
+<body>
+    <div class="content" style="display: none; height: 100%;">
+    </div>
+    <div class="style-title-content">
+        <h1 class="style-title-content-text">Material Design</h1>
+    </div>
+    <div style="display: inline-flex; width: 100%; justify-content: center;">
+        <div class="player-content">
+            <div class="mobile-layout-content">
+                <div class="mobile-layout" data-tilt data-tilt-max="10" data-tilt-speed="100" data-tilt-perspective="700" style="transform: perspective(700px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); will-change: transform;">
+                    <div class="header" id="header">
+                        <span class="header_title" id="title">Pruttify</span>
+                    </div>
+                    <div class="header_menu_wrapper">
+                        <div class="header_menu">
+                            <a href="#" id="playlist" class="link" onclick="menu('playlist')">PLAYLIST</a>
+                            <a href="#" id="songs" class="link menu-item-song" onclick="menu('songs')" style="display: none" >SONGS</a>
+                            <a href="#" id="albums" class="link" onclick="menu('albums')">ALBUMS</a>
+                        </div>
+                    </div>
+                    <div class="media-controller playlist-content" style="display: none;"></div>
+                    <div class="media-controller media-controller-content" style="display: none;">
+                        <div class="track-art-content">
+                            <div class="track-art">
+                                <img class="track-art-img" src="album-covers/artvsscience.png" alt="Girl in a jacket" width="270" height="270">
+                            </div>
+                        </div>
+                        <div class="track-information-content">
+                            <span class="track-artist">Supertramp</span>
+                            <span class="track-name">S.G. Goodman</span>
+                        </div>
+                        <div class="track_timeline">
+                            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span class="current-time">2:10</span>
+                                <span class="total-duration">6:10</span>
+                            </div>
+                        </div>
+                        <div class="media_wrapper">
+                            <i class="material-icons prev-track" onclick="prevTrack()">skip_previous</i>
+                            <i class="material-icons playpause-track" onclick="playpauseTrack()">play_arrow</i>
+                            <i class="material-icons next-track" onclick="nextTrack()">skip_next</i>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: center;">
+                            <i class="material-icons volume-down">volume_down</i>
+                            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                            <i class="material-icons volume-up">volume_up</i>
+                        </div>
+                    </div>
+                    <div class="media-controller songs-content" style="display: none;"></div>
+                    <div class="albums-content" style="display: none;"></div>
+                    <div class="media-controller-secondary" style="display: none">
+                        <div class="media-controller-secondary-wrapper">
+                            <img class="track-art-secondary" style="cursor: pointer;" src="album-covers/artvsscience.png" onclick="openMediaController()" alt="Girl in a jacket" width="40" height="40">
+                            <i class="material-icons keyboard-arrow-up" style="cursor: pointer;" onclick="openMediaController()">keyboard_arrow_up</i>
+                            <input type="range" min="1" max="100" value="0" class="seek_slider_secondary" disabled>
+                            <div style="display: inline-grid; width: 100%; cursor: pointer;" onclick="openMediaController()">
+                                <span class="track-name-secondary">S.G. Goodman</span>
+                                <span class="track-artist-secondary">Supertramp</span>
+                            </div>
+                            <i class="material-icons playpause-track-secondary" style="padding: 10px;" onclick="playpauseTrackSecondary()">play_arrow</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="survey" style="padding: 41px;">
+
+        </div>
+</div>
+<div class="next-page-content">
+    <span class="next-arrow-text">Glassmorphism</span>
+    <i class="material-icons next-arrow-icon">keyboard_arrow_right</i>
+</div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="js/playback.js"></script>
+</body>
+</html>

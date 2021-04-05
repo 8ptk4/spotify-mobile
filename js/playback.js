@@ -815,7 +815,7 @@ let start = {
     mediaPlayer: document.querySelector(".player-content"),
     stylesheet: document.getElementById("stylesheet"),
     title: document.querySelector(".style-title-content-text"),
-    state: 2,
+    state: 0,
 
     init: function() {
         switch (this.state) {

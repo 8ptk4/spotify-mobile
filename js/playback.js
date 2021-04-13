@@ -307,25 +307,25 @@ let track_list_albums = [
 
 let playlists = [
     {
-        name: "Rock playlist",
+        name: "Rock spellista",
         alias: "rock",
         playlist: track_list_rock,
         author: "Sven Jonsson",
     },
     {
-        name: "Country playlist",
+        name: "Country spellista",
         alias: "country",
         playlist: track_list_country,
         author: "Olle Ingvarsson",
     },
     {
-        name: "Dance playlist",
+        name: "Dance spellista",
         alias: "dance",
         playlist: track_list_dance,
         author: "Johan Karlsson"
     },
     {
-        name: "Jazz playlist",
+        name: "Jazz spellista",
         alias: "jazz",
         playlist: track_list_jazz,
         author: "Ingrid Pettersson"
@@ -428,11 +428,11 @@ function renderPlaylist() {
                 </div>
                 <div style="display: inline-flex; height: 40px; flex-direction: column; justify-content: center">
                     <span class="playlist-title" style="text-align: left;">${x.name}</span>
-                    <span class="playlist-author">created by: ${x.author}</span>
+                    <span class="playlist-author">Skapad av: ${x.author}</span>
                 </div>
                 <div class="playlist-tracks-wrapper" style="display: inline-flex; height: 40px; flex-direction: column; justify-content: center">
                     <span class="playlist-amount">${x.playlist.length}</span>
-                    <span class="playlist-tracks">tracks</span>
+                    <span class="playlist-tracks">låtar</span>
                 </div>
             </div>
         `
@@ -452,7 +452,7 @@ function renderSongs() {
 
     songsContent.innerHTML = `
         <div class="currently-playing-content">
-            <span class="currently-playing">Currently listening to ${!activePlayListName.includes("playlist") ? "album: " + activePlayListName : "playlist: " + dividePlaylist[0] }</span>
+            <span class="currently-playing">Spelar från ${!activePlayListName.includes("playlist") ? "album: " + activePlayListName : "spellista: " + dividePlaylist[0] }</span>
         </div>
     `;
 
@@ -815,7 +815,7 @@ let start = {
     mediaPlayer: document.querySelector(".player-content"),
     stylesheet: document.getElementById("stylesheet"),
     title: document.querySelector(".style-title-content-text"),
-    state: 0,
+    state: 1,
 
     init: function() {
         switch (this.state) {
@@ -859,8 +859,7 @@ let start = {
                 </div>
                 
                 <button onclick="changeState()" class="information-content-button" style="margin: 30px;vertical-align:middle; display: ${display() ? "" : "none"}"><span>Starta</span></button>
-            
-                </div>
+            </div>
         `
 
         const nextBtn = document.querySelector(".next-page-content");
@@ -894,7 +893,7 @@ let start = {
             </iframe>
         `
 
-        changeNextBtn("Gå vidare till Glassmorphism");
+        changeNextBtn("Gå vidare till nästa design");
     },
 
     glassmorphism: function() {
@@ -926,7 +925,7 @@ let start = {
             </iframe>
         `
 
-        changeNextBtn("Gå vidare till Neumorphism");
+        changeNextBtn("Gå vidare till nästa design");
     },
 
     neumorphism: function() {
